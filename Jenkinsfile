@@ -3,5 +3,7 @@ node {
 		checkout scm
 		
 		sh "./gradlew build"
+		
+		junit 'build/test-results/*.xml'
 	}
 }
