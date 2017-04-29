@@ -1,5 +1,5 @@
 node {
 	stage("Build") {
-		echo "Build"
+		checkout scm
 	}
 }
