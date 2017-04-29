@@ -11,4 +11,5 @@ RUN apt-get update && \
 
 COPY build/libs/helloworld-service-0.1.0.jar /opt/helloworld/helloworld-service-0.1.0.jar
 
-RUN java -jar /opt/helloword/helloworld-service-0.1.0.jar
+# RUN java -jar /opt/helloword/helloworld-service-0.1.0.jar
+RUN java --version
