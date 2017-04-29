@@ -12,6 +12,9 @@ node {
 		      reportFiles: 'index.html',
 		      reportName: "Unit Test Report"
 		    ])
-
+	}
+	
+	stage("Create Container") {
+		def app = docker.build "helloworld-service"
 	}
 }
