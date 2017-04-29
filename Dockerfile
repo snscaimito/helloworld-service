@@ -9,6 +9,6 @@ RUN apt-get update && \
     apt-get install -y oracle-java8-installer && \
     apt-get clean
 
-COPY build/libs/helloworld-service-0.1.0.jar /opt/helloworld/
+COPY build/libs/helloworld-service-0.1.0.jar /opt/helloworld/helloworld-service-0.1.0.jar
 
 RUN java -jar /opt/helloword/helloworld-service-0.1.0.jar
