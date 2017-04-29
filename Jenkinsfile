@@ -8,7 +8,7 @@ node {
 		      allowMissing: false,
 		      alwaysLinkToLastBuild: false,
 		      keepAll: true,
-		      reportDir: 'reports/tests',
+		      reportDir: 'build/reports/tests',
 		      reportFiles: 'index.html',
 		      reportName: "Unit Test Report"
 		    ])
