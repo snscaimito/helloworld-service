@@ -2,7 +2,7 @@ node {
 	stage("Build") {
 		checkout scm
 		
-		sh "./gradlew build"
+		sh "./gradlew cleanTest build"
 		
 		junit 'build/test-results/*.xml'
 	}
