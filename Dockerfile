@@ -12,5 +12,3 @@ RUN apt-get update && \
 COPY build/libs/helloworld-service-0.1.0.jar /opt/helloworld/helloworld-service-0.1.0.jar
 
 EXPOSE 8080:8080
-
-RUN java -jar /opt/helloworld/helloworld-service-0.1.0.jar
