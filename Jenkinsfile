@@ -17,7 +17,7 @@ node {
 	stage("Create Container") {
 		def hw_svc = docker.build "helloworld-service"
 		hw_svc.inside {
-			sh java -jar /opt/helloworld/helloworld-service-0.1.0.jar
+			sh "java -jar /opt/helloworld/helloworld-service-0.1.0.jar"
 		}
 	}
 }
