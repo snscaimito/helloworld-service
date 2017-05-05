@@ -1,14 +1,8 @@
-node('master') {
-	docker.withServer('unix:///var/run/docker.sock') {
-		stage('Git clone') {
-			echo 'Cloning git'
-		}
-		stage('Build') {
-			docker
-				.image('jenkins-agent-ubuntu')
-				.inside(--volumes-from jenkins-master') {
-					sh "echo 'from inside'"
-				}
+node() {
+	stage('Build') {
+		docker.image('maven:3.3.3-jdk-8').inside {
+		  checkout scm
+		  sh 'mvn -B clean install'
 		}
 	}
 }
