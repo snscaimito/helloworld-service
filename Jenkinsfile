@@ -19,7 +19,6 @@ node {
 	}
 	
 	stage("Test Container") {
-		hw.run("-P -d")
-		cuke = docker.build('cucumber').run('--link ${hw.id}')
+		hw.run('-P -d')
 	}
 }
