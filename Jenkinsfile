@@ -14,14 +14,12 @@ node {
 		    ])
 	}
 	
+	stage("Build Container") {
+		hw = docker.build "helloworld-service"
+	}
+	
 	stage("Test Container") {
-		def hw_svc = docker.build "helloworld-service"
-		hw_svc.inside {
-			sh "java -jar /opt/helloworld/helloworld-service-0.1.0.jar &"
-		}
-		docker.image('ubuntu:latest')
-		.inside {
-			sh "curl http://www.google.com"
-		}
+		hw.run("-P -d")
+		cuke = docker.build('cucumber').run('--link ${hw.id})
 	}
 }
