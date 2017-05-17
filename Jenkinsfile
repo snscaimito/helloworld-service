@@ -15,11 +15,11 @@ node {
 	}
 	
 	stage("Build Container") {
-		hw = docker.build "helloworld-service"
+		hw = docker.build("helloworld-service", "-f helloworld/Dockerfile")
 	}
 	
 	stage("Test Container") {
 		hw.run('-P -d')
-		cuke = docker.build('cucumber').run()
+		cuke = docker.build("cucumber", "-f cucumber/Dockerfile").run()
 	}
 }
